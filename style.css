@@ -136,46 +136,43 @@ ul.main-menu li a.active {
 .show {
   display:block;
 }
-.contact-buttons {
-  display: flex;
-  gap: 10px; /* Space between buttons */
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-}
 
 .contact-buttons .btn {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between image and text */
-  padding: 8px 12px;
+  justify-content: center; /* Center text and icon */
+  gap: 8px; /* Reduce space between icon and text */
+  padding: 8px 16px; /* Smaller padding for compact buttons */
   text-decoration: none;
-  color: black;
+  color: black; /* Black text */
   background-color: #FF8C00; /* Dark orange */
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 6px; /* Slightly smaller rounded corners */
+  font-size: 14px; /* Reduce text size */
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
+  min-width: 120px; /* Minimum button width to prevent shrinking */
 }
 
 .contact-buttons .btn img {
-  width: 24px;
-  height: 24px;
+  width: 20px; /* Reduce icon size */
+  height: 20px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .contact-buttons .btn:hover {
-  background-color: #E67300; /* Slightly darker on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  background-color: #E67300; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
 .contact-buttons .btn:active {
-  transform: translateY(0); /* Reset on click */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 600px) {
-  .contact-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px;
-  }
+.contact-buttons {
+  display: flex;
+  gap: 8px; /* Reduce space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: flex-start; /* Align buttons to the left */
 }
