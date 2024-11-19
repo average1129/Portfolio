@@ -136,6 +136,46 @@ ul.main-menu li a.active {
 .show {
   display:block;
 }
+.contact-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
 
+.contact-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  background-color: #FF8C00; /* Dark orange */
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
 
+.contact-buttons .btn img {
+  width: 24px;
+  height: 24px;
+}
 
+.contact-buttons .btn:hover {
+  background-color: #E67300; /* Slightly darker on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-buttons .btn:active {
+  transform: translateY(0); /* Reset on click */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .contact-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+  }
+}
