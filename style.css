@@ -30,28 +30,41 @@ small {
   font-size: 75%;
 }
 
-/**
- * Headings
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-  text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 300;
+/* Header container */
+/* General Header Styling */
+.header {
+  display: flex;
+  align-items: center; /* Align logo and menu vertically */
+  justify-content: space-around; /* Space between logo and menu */
+  padding: 20px 40px; /* Adjust spacing */
+  background: rgba(0, 0, 0, 0.5); /* Dark translucent background */
+  box-shadow: 0 4px 6px rgba(94, 91, 91, 0.2); /* Subtle shadow for depth */
 }
-h1 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
-h2 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
-h3 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
-h4 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
-h5 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
-h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
 
+/* Logo Styling */
+.logo-container {
+  flex-shrink: 0; /* Prevent shrinking of logo */
+}
+
+.logo {
+  width: 150px; /* Adjust logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Header content styles */
+.header-content h1,
+.header-content h2 {
+  margin: 0; /* Remove default margins */
+}
+
+.header-content h1 {
+  font-size: 8rem; /* Adjust size as needed */
+}
+
+.header-content h2 {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: 300; /* Optional: make it lighter */
+}
 /**
  * Paragraphs
  */
@@ -97,36 +110,48 @@ html {
   background-size:cover;
 }
 body {
-  max-width:800px;
-  margin:25px auto;
+  max-width:1000px;
+  margin:40px auto;
 }
 header, #content, footer { 
-  background: rgba(0,0,0,.8); 
-  padding:25px;
-  color:#FFFFFF; 
+  background: rgba(0, 0, 0, 0.8); /* Increase translucency */
+  padding: 25px;
+  color: #FFFFFF; 
 }
 
-/* Menu Links */
+
 ul.main-menu {
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center; /* Center-align menu items */
+  padding: 0; /* Remove extra padding */
+  margin: 0 auto; /* Center the menu */
   list-style: none;
+  background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent items from spilling out */
 }
+
+ul.main-menu li {
+  margin: 0; /* Reset margins for list items */
+  flex: 1; /* Make all items evenly sized if desired */
+}
+
 ul.main-menu li a {
-  margin-right:20px;
-  font-size:2.0rem;
-  border-bottom: solid transparent 3px;
-  color:#cfd2da;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+  text-align: center; /* Center-align text */
+  border: none; /* Remove borders */
+  border-radius: 0; /* Sharp edges */
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2); /* Light translucent background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block; /* Ensure the link fills its container */
 }
-ul.main-menu li a:hover {
-  color:#FFFFFF;
-}
+
+ul.main-menu li a:hover,
 ul.main-menu li a.active {
-  color:#FFFFFF;
-  border-bottom-color:#EF6D3D;
+  color: #e85d0d;
+  background-color: rgba(147, 147, 140, 0.877)
 }
 
 /* Utility classes */
@@ -175,4 +200,62 @@ ul.main-menu li a.active {
   gap: 8px; /* Reduce space between buttons */
   flex-wrap: wrap; /* Allow buttons to wrap */
   justify-content: flex-start; /* Align buttons to the left */
+}
+
+.project-cards {
+  display: flex;
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: center; /* Center-align cards */
+}
+
+.card {
+  background-color: #534d4d57; /* Light grey background */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  width: 300px; /* Fixed width for each card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Clip overflowing content */
+  text-align: center; /* Center-align text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
+  border-color: #d97d54; /* Muted dark orange on hover */
+}
+
+.card img {
+  width: 100%; /* Full-width image */
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Crop image to fit */
+}
+
+.card h3 {
+  margin: 16px 0 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d97d54; /* Muted dark orange */
+}
+
+.card p {
+  margin: 0 16px 16px;
+  font-size: 14px;
+  color: #eadada; /* Dark grey text */
+}
+
+.card .btn {
+  background-color: #b0b0b0; /* Neutral grey */
+  color: #464242; /* White text */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #808080; /* Darker grey */
+  color: #f0f0f0; /* Light grey text */
 }

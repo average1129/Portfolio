@@ -27,13 +27,19 @@
   
   <body>
 
-    <header id="header">
-      <img src="logo.png">
-      <h1>Aditya Saggar</h1>
-      <h6> Connecting the Dots: Exploring Networked Intelligence for Future Space Systems</h6>
+    <header class="header">
+    <img src="logo.png">
+    <div class="header-content">
+      <h1>               Aditya Saggar </h1>
+      <h2>Exploring Networked Intelligence for Future Space Systems</h2>
+    </div>
       <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
+  </header>
+     
+    
       <ul class="main-menu">
         <li><a href="#home">home</a></li>
+        
         <li><a href="#About">About Me</a></li>
         <li><a href="#Resume">Work Experience</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -44,12 +50,48 @@
       <div class="inner">
         <div id="content"> 
           
-          <div id="home" class="content-region hide">
-            <h2>Home</h2>
-            <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
-            </p>
+          <div id="home" class="content-region">
+            <h2>Projects</h2>
+            <p>This is a simple website to host my projects and updates.</p>
+            
+            <!-- Project Cards Section -->
+            <div class="project-cards">
+              <!-- Project 1 -->
+              <div class="card">
+                
+                <h3>Swarming Satellite Network Simulator</h3>
+                <p>
+                  A simulation tool inspired by Alfonso Gonzalez's AWP and Simon Kassing's Hypatia, 
+                  focusing on satellite constellations and federated learning.
+                </p>
+                <a href="https://github.com/yourusername/project1" class="btn">View Project</a>
+              </div>
+    
+              <!-- Project 2 -->
+              <div class="card">
+               
+                <h3>Space Data Link Protocol</h3>
+                <p>
+                  Contributing to LibreCube's implementation of the Space Data Link Protocol 
+                  for reliable communication in space systems.
+                </p>
+                <a href="https://github.com/yourusername/project2" class="btn">View Project</a>
+              </div>
+    
+              <!-- Project 3 -->
+              <div class="card">
+                
+                <h3>Deep Learning for Modulation Recognition</h3>
+                <p>
+                  A Bachelor's thesis project exploring AI-based automatic modulation recognition 
+                  for communication systems, inspired by Timothy O'Shea's work.
+                </p>
+                <a href="https://github.com/yourusername/project3" class="btn">View Project</a>
+              </div>
+            </div>
           </div>
+          
+
           
           <div id="About" class="content-region hide">
             <h2>Short Bio</h2>
