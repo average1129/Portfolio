@@ -65,6 +65,8 @@ small {
   font-size: 1.5rem; /* Adjust size as needed */
   font-weight: 300; /* Optional: make it lighter */
 }
+
+
 /**
  * Paragraphs
  */
@@ -202,15 +204,28 @@ ul.main-menu li a.active {
   justify-content: flex-start; /* Align buttons to the left */
 }
 
+.card h3 {
+  margin: 16px 0 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d97d54; /* Muted dark orange */
+  text-align: center; /* Center-align the text */
+}
+
 .project-cards {
   display: flex;
   gap: 20px; /* Space between cards */
+  
   flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
   justify-content: center; /* Center-align cards */
 }
 
+
+
 .card {
   background-color: #534d4d57; /* Light grey background */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Ensure proper spacing */
   border: 1px solid #ddd; /* Subtle border */
   border-radius: 8px; /* Rounded corners */
   width: 300px; /* Fixed width for each card */
@@ -220,10 +235,30 @@ ul.main-menu li a.active {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-cards {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between stacked cards */
+  align-items: stretch; /* Ensure cards occupy the full width */
+  
+}
+
+.card {
+  width: 100%; /* Make each card take the full width of the container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
+  text-align: left; /* Optional: Align text to the left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .card:hover {
   transform: translateY(-5px); /* Lift effect */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
   border-color: #d97d54; /* Muted dark orange on hover */
+}
+
+.card-content {
+  flex-grow: 1; /* Make this container grow to fill space */
+  padding: 16px; /* Add padding for spacing */
 }
 
 .card img {
@@ -244,6 +279,13 @@ ul.main-menu li a.active {
   font-size: 14px;
   color: #eadada; /* Dark grey text */
 }
+.card-buttons {
+  margin-top: auto; /* Push the buttons to the bottom */
+  display: flex;
+  justify-content: space-around; /* Space buttons evenly */
+  padding: 16px; /* Add padding to the bottom */
+}
+
 
 .card .btn {
   background-color: #b0b0b0; /* Neutral grey */
@@ -259,3 +301,38 @@ ul.main-menu li a.active {
   background-color: #808080; /* Darker grey */
   color: #f0f0f0; /* Light grey text */
 }
+
+/* Style for the GitHub icon in the button */
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text and icon */
+  gap: 8px; /* Reduced space between icon and text */
+  padding: 8px 16px; /* Smaller padding for compact buttons */
+  text-decoration: none;
+  color: black; /* Black text */
+  background-color: #FF8C00; /* Dark orange */
+  border-radius: 6px; /* Slightly smaller rounded corners */
+  font-size: 14px; /* Reduced text size */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
+  min-width: 120px; /* Minimum button width to prevent shrinking */
+}
+
+.github-btn img {
+  width: 16px; /* Adjusted size of the icon */
+  height: 16px; /* Adjusted size of the icon */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.github-btn:hover {
+  background-color: #E67300; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.github-btn:active {
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
